@@ -7,29 +7,29 @@ import './style.css';
 // });
 function HttpTrail(){
     const [user,setUser] = useState([]);
-    let [name , setName] = useState("");
-    let [email, setEmail] = useState("");
-    let [website,setWebsite] = useState("");
+    const [name , setName] = useState("");
+    const [email, setEmail] = useState("");
+    const [website,setWebsite] = useState("");
     useEffect(() =>{
-        fetch("https://jsonplaceholder.typicode.com/users").
-        then(response => response.json()).
-        then(response => setUser(response))
+        fetch("https://jsonplaceholder.typicode.com/users")
+        .then(response => response.json())
+        .then(response => setUser(response))
     },[]);
     console.log(user)
     function addOne(){
-        name = name.trim();
-        email = email.trim();
-        website = website.trim();
-        if(name && email && website){
+        const tname = name.trim();
+        const temail = email.trim();
+        const twebsite = website.trim();
+        if(tname && temail && twebsite){
             fetch("https://jsonplaceholder.typicode.com/users", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
                 },
                 body: JSON.stringify({
-                    name,
-                    email,
-                    website
+                    name : tname,
+                    email : temail,
+                    website : twebsite
                 })
             })
             .then(response => response.json())
@@ -74,7 +74,7 @@ function HttpTrail(){
     }
 
     function userDelete(id){
-        const users =user.find((user) => user.id === id);
+        //const users =user.find((users) => users.id === id);
         fetch(`https://jsonplaceholder.typicode.com/users/${id}`, {
                 method: "DELETE",
             })
@@ -82,7 +82,7 @@ function HttpTrail(){
             .then(response => {
                 console.log(response);
                 setUser((users) => {
-                    return users.filter(user => user.id != id);
+                    return users.filter(user => user.id !== id);
                 });
             })
             .catch(error => {
