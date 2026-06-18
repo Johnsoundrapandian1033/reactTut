@@ -1,0 +1,19 @@
+.hero {
+  background: linear-gradient(
+      rgba(0, 0, 0, 0.6),
+      rgba(0, 0, 0, 0.6)
+    ),
+    url("https://images.unsplash.com/photo-1486406146926-c627a92ad1ab");
+
+  background-size: cover;
+  background-position: center;
+  height: 90vh;
+}
+
+.card {
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+}

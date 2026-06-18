@@ -3,6 +3,11 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+//import Home from './Components/Home';
+import 'bootstrap/dist/css/bootstrap.min.css';
+//import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+import Footer from './Components/Footer';
 //import Car from './Components/Car';
 //import Garage from './Components/Garage';
 //import Header from './Components/Header';
@@ -19,6 +24,8 @@ root.render(
     {/* <Garage/> */}
     {/* <Header/> */}
      <App/> 
+     <Footer/>
+     {/* <Home/> */}
     {/* <FavoriteColor/>
     <FavoriteClass/>
     <MultipleState/>
